@@ -11,15 +11,15 @@ def configdataset(dataset, dir_main):
         raise ValueError('Unknown dataset: {}!'.format(dataset))
 
     # loading imlist, qimlist, and gnd, in cfg as a dict
-    gnd_fname = os.path.join(dir_main, dataset, 'gnd_{}.pkl'.format(dataset))
+    gnd_fname = os.path.join("ACMM", 'gnd_{}.pkl'.format(dataset))
     with open(gnd_fname, 'rb') as f:
         cfg = pickle.load(f)
     cfg['gnd_fname'] = gnd_fname
 
-    cfg['ext'] = '.jpg'
-    cfg['qext'] = '.jpg'
-    cfg['dir_data'] = os.path.join(dir_main, dataset)
-    cfg['dir_images'] = os.path.join(cfg['dir_data'], 'jpg')
+    cfg['ext'] = ''#'.jpg'
+    cfg['qext'] = ''#'.jpg'
+    cfg['dir_data'] = os.path.join("ACMM","test","images4retrival")
+    cfg['dir_images'] =cfg['dir_data']
 
     cfg['n'] = len(cfg['imlist'])
     cfg['nq'] = len(cfg['qimlist'])
