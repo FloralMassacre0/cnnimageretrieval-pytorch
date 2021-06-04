@@ -72,14 +72,15 @@ class TuplesDataset(data.Dataset):
     
             # setting fullpath for images
             self.images = [os.path.join(ims_root, db['cids'][i]+'.jpg') for i in range(len(db['cids']))]
-        elif name.startwith('acmm'):
-            db_root=os.path.join("ACMM","trainpkl")
+        elif name.startswith('img'):
+            db_root="ACMM"
             ims_root=os.path.join("ACMM","images4retrival")
-            db_fn = os.path.join(db_root, 'img4retrival.pkl')
+            db_fn = os.path.join(db_root, 'img4retrival_train.pkl')
             with open(db_fn, 'rb') as f:
                 db = pickle.load(f)[mode]
     
             # setting fullpath for images
+            print(db.keys())
             self.images = [os.path.join(ims_root,db['cids'][i]) for i in range(len(db['cids']))]
 
         else:
