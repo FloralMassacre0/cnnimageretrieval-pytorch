@@ -1,7 +1,7 @@
 import os
 import pickle
 
-DATASETS = ['oxford5k', 'paris6k', 'roxford5k', 'rparis6k','acmm']
+DATASETS = ['acmm']
 
 def configdataset(dataset, dir_main):
 
