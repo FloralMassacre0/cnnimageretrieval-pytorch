@@ -500,7 +500,7 @@ def test(datasets, net):
         cfg = configdataset(dataset, os.path.join(get_data_root(), 'test'))
         images = [cfg['im_fname'](cfg,i) for i in range(cfg['n'])]
         qimages = [cfg['qim_fname'](cfg,i) for i in range(cfg['nq'])]
-        bbxs = [tuple(cfg['gnd'][i]['bbx']) for i in range(cfg['nq'])]
+        bbxs = None #[tuple(cfg['gnd'][i]['bbx']) for i in range(cfg['nq'])]
         
         # extract database and query vectors
         print('>> {}: database images...'.format(dataset))
