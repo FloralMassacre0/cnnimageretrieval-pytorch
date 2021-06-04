@@ -26,9 +26,9 @@ from cirtorch.utils.whiten import whitenlearn, whitenapply
 from cirtorch.utils.evaluate import compute_map_and_print
 from cirtorch.utils.general import get_data_root, htime
 
-training_dataset_names = ['retrieval-SfM-120k']
-test_datasets_names = ['oxford5k', 'paris6k', 'roxford5k', 'rparis6k']
-test_whiten_names = ['retrieval-SfM-30k', 'retrieval-SfM-120k']
+training_dataset_names = ['img4retrival-acmm']
+test_datasets_names = ['acmm']
+test_whiten_names = []
 
 model_names = sorted(name for name in models.__dict__
     if name.islower() and not name.startswith("__")
@@ -42,7 +42,7 @@ parser = argparse.ArgumentParser(description='PyTorch CNN Image Retrieval Traini
 # export directory, training and val datasets, test datasets
 parser.add_argument('directory', metavar='EXPORT_DIR',
                     help='destination where trained network should be saved')
-parser.add_argument('--training-dataset', '-d', metavar='DATASET', default='retrieval-SfM-120k', choices=training_dataset_names,
+parser.add_argument('--training-dataset', '-d', metavar='DATASET', default='img4retrival-acmm', choices=training_dataset_names,
                     help='training dataset: ' + 
                         ' | '.join(training_dataset_names) +
                         ' (default: retrieval-SfM-120k)')
