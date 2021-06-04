@@ -48,10 +48,10 @@ parser.add_argument('--training-dataset', '-d', metavar='DATASET', default='img4
                         ' (default: retrieval-SfM-120k)')
 parser.add_argument('--no-val', dest='val', action='store_false',
                     help='do not run validation')
-parser.add_argument('--test-datasets', '-td', metavar='DATASETS', default='roxford5k,rparis6k',
+parser.add_argument('--test-datasets', '-td', metavar='DATASETS', default='acmm',
                     help='comma separated list of test datasets: ' + 
                         ' | '.join(test_datasets_names) + 
-                        ' (default: roxford5k,rparis6k)')
+                        ' (default:acmm)')
 parser.add_argument('--test-whiten', metavar='DATASET', default='', choices=test_whiten_names,
                     help='dataset used to learn whitening for testing: ' + 
                         ' | '.join(test_whiten_names) + 
@@ -135,8 +135,8 @@ def main():
 
     # check if test dataset are downloaded
     # and download if they are not
-    download_train(get_data_root())
-    download_test(get_data_root())
+    #download_train(get_data_root())
+    #download_test(get_data_root())
 
     # create export dir if it doesnt exist
     directory = "{}".format(args.training_dataset)
